@@ -9,7 +9,7 @@ const SignUp = (props) => {
           e.preventDefault();
           const { name, email, password} = credentials; //destructuring 
           //API call
-          const url=`http://localhost:5000/api/auth/createuser`;
+          const url=`https://notesapp-mern.onrender.com/api/auth/createuser`;
           if(credentials.cpassword !== credentials.password){
               props.showAlert("Passwords not Matched, Retry!!","warning");
           }
