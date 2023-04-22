@@ -50,6 +50,7 @@ const NoteState = (props) => {
         'auth-token': localStorage.getItem("token")
       }
     });
+    // eslint-disable-next-line 
     const json = response.json(); 
     const newNotes = notes.filter((note) => { return note._id !== id })
     setNotes(newNotes)
@@ -66,6 +67,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title, description, tag})
     });
+    // eslint-disable-next-line 
     const json = await response.json(); 
 
      let newNotes = JSON.parse(JSON.stringify(notes))
