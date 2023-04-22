@@ -4,7 +4,7 @@
   "description": "quick and personalized notes taking app",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon index.js",
+    "dev":"node index.js",
     "build":"npm i",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
