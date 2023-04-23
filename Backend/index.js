@@ -1,6 +1,15 @@
 const connectToMongo = require("./db");
-
-connectToMongo();
+const uri = "mongodb+srv://ksingh3154:polpol@098@cluster0.zvgdzep.mongodb.net/notesapp"
+//connecting to database
+const start = async () => {
+    try {
+        await connectToMongo(uri);
+        app.listen(5000, () => console.log(`Server is listening on port 5000...`) );
+    } catch (error) {
+        console.log(error);
+    }
+};
+start();
 
 const cors = require('cors');
 const express = require("express");
