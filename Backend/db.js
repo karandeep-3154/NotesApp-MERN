@@ -3,10 +3,13 @@ const url = "mongodb+srv://ksingh3154:polpol@098@cluster0.zvgdzep.mongodb.net/?r
 
 
 const connectToMongo = ()=>{
-  mongoose.set("strictQuery", false);  //for removing deprecation warning
+ 
     mongoose.connect(url , 
-        { useNewUrlParser: true, useUnifiedTopology: true },
-        ()=>{  console.log(`Connected with database Successfuly`); })
+        {  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }});
 }
 
 module.exports = connectToMongo;
