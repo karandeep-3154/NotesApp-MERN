@@ -1,15 +1,10 @@
-const mongoose = require("mongoose")
-const url = "mongodb+srv://ksingh3154:polpol@098@cluster0.zvgdzep.mongodb.net/?retryWrites=true&w=majority";
+const mongoose= require("mongoose");
 
-
-const connectToMongo = ()=>{
- 
+const connectToMongo = (url)=>{
+    mongoose.set("strictQuery", false);  //for removing deprecation warning
     mongoose.connect(url , 
-        {  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }});
+        { useNewUrlParser: true, useUnifiedTopology: true },
+        ()=>{  console.log(`Connected with database Successfuly`); })
 }
 
-module.exports = connectToMongo;
+module.exports= connectToMongo;
