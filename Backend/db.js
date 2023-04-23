@@ -3,8 +3,11 @@ const mongoURI = "mongodb+srv://ksingh3154:polpol@098@cluster0.zvgdzep.mongodb.n
 
 
 const connectToMongo = ()=>{
-    mongoose.connect(mongoURI,
-        console.log("Connected to Mongo with localhost successfully!")
+    mongoose.connect(mongoURI,{serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }}
     )
 }
 
